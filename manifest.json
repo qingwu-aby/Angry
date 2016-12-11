@@ -1,0 +1,26 @@
+{
+    "lang": "en",
+    "name": "Angry_Project",
+    "short_name": "Angry",
+    "description": "The WebApp that helps you find the Knowledge!",
+    "icons": [{
+        "src": "/src/assets/images/ico.webp",
+        "sizes": "64x64",
+        "type": "image/webp"
+    }, {
+        "src": "/src/assets/images/ico.webp",
+        "sizes": "64x64"
+    }, {
+        "src": "/src/assets/images/ico.webp",
+        "sizes": "128x128",
+        "density": 2
+    }],
+    "flashscreen": [{
+
+    }],
+    "start_url": "/#/about",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "theme_color": "#42b983",
+    "background_color": "#42b983"
+}

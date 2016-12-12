@@ -3,10 +3,13 @@ import Remind from '../components/remind.vue'
 import Nav from '../components/nav.vue'
 import About from '../components/about.vue'
 import NotFound from '../components/404.vue'
+import login from '../components/login.vue'
+import personInfo from '../components/about/personInfo.vue'
 
 export default [{
     path: '/',
-    component: Home
+    component: Home,
+	redirect: '/home'
 }, {
     path: '/home',
     component: Home
@@ -18,29 +21,34 @@ export default [{
     component: Nav
 }, {
     path: '/about',
-    component: About
-    // children: [{
-    //     path: '',
-    //     component: About
+    component: About,
+	children: [{
+		path: 'personInfo',
+		component: personInfo
+	}
     // }, {
     //     path: 'aboutCollection',
     //     component: aboutCollection
     // }, {
     //     path: 'aboutArticle',
-    //     component: aboutCollection
+    //     component: aboutArticle
     // }, {
     //     path: 'aboutList',
-    //     component: aboutCollection
+    //     component: aboutList
     // }, {
     //     path: 'aboutBug',
-    //     component: aboutCollection
+    //     component: aboutBug
     // }, {
     //     path: 'aboutInfo',
-    //     component: aboutCollection
+    //     component: aboutInfo
     // }, {
     //     path: 'aboutShare',
-    //     component: aboutCollection
-    // }]
+    //     component: aboutShare
+    // }
+     ]
+}, {
+	path: '/login',
+	component: login,
 }, {
     path: '*',
     component: NotFound

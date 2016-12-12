@@ -100,13 +100,12 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="less">
+	@borderColor: #eee;
+	@fontColor: #42b983;
 	.content{
 		margin: 50px 0;
 		overflow: hidden;
-	}
-	.router-link-active i {
-		color: #42b983;
 	}
 	.head_wrapper{
 		position: fixed;
@@ -116,21 +115,21 @@ export default {
 		height: 50px;
 		text-align: center;
 		line-height: 50px;
-		background: #42b983;
-		border-bottom:1px solid #eee;
-	}
-	.head_wrapper p{
-		color:#fff;
-		font-size: 1.45rem;
-		display:inline-block;
-		vertical-align: bottom;
+		background: @fontColor;
+		border-bottom:1px solid @borderColor;
+		p{
+			color:#fff;
+			font-size: 1.45rem;
+			display:inline-block;
+			vertical-align: bottom;
+		}
 	}
 	.mask{
 		background: #fff;
 		font-size:1.15rem;
 		width: 100%;
-		border-top: 1px solid #eee;
-		border-bottom: 1px solid #eee;
+		border-top: 1px solid @borderColor;
+		border-bottom: 1px solid @borderColor;
 		margin-bottom: 1rem;
 	}
 	._hack{
@@ -156,11 +155,11 @@ export default {
 	.about_list{
 		height: 50px;
 		line-height: 50px;
-		border-bottom: 1px solid #eee;
-	}
-	.about_list i{
-		color: #888;
-		font-size: 1.5rem;
+		border-bottom: 1px solid @borderColor;
+		i{
+			color: #888;
+			font-size: 1.5rem;
+		}
 	}
 	.login_module{
 		width: 96%;
@@ -171,14 +170,21 @@ export default {
 		width: 28%;
 		float: left;
 		height: 6rem;
+		img{
+			border: 2px solid @borderColor;
+			border-radius: 50%;
+			margin: 1rem 0;
+			width: 4rem;
+			height: 4rem;
+		}
 	}
 	.about_left{
 		width: 20%;
 		float: left;
 		height: 50px;
-	}
-	.about_left i{
-		line-height: 50px;
+		i{
+			line-height: 50px;
+		}
 	}
 	.login_middle{
 		padding-left:2%;
@@ -186,37 +192,33 @@ export default {
 		height: 6rem;
 		display: inline-block;
 		line-height: 6rem;
+		p{
+			text-align: left;
+		}
 	}
 	.about_middle{
 		width: 65%;
 		height: 50px;
 		display: inline-block;
 		line-height: 50px;
-	}
-	.login_middle p,.about_middle p{
-		text-align: left;
+		p{
+			text-align: left;
+		}
 	}
 	.login_right{
 		width: 12%;
 		float: right;
 		height: 6rem;
 		line-height: 6rem;
+		i{
+			color: #222;
+		}
 	}
 	.about_right{
 		width: 15%;
 		float: right;
 		height: 50px;
 		line-height: 50px;;
-	}
-	.login_right i{
-		color: #222;
-	}
-	.login_left img{
-		border: 2px solid #eee;
-		border-radius: 50%;
-		margin: 1rem 0;
-		width: 4rem;
-		height: 4rem;
 	}
 	.copyright{
 		margin-bottom: .5rem;

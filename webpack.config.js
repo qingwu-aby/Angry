@@ -28,9 +28,13 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: 'style-loader!css-loader',
-			exclude: /node_modules/
+            exclude: /node_modules/
         }, {
-            test: /\.(png|jpg|gif|svg)$/,
+            test: /\.less$/,
+            exclude: /node_modules/,
+            loader: 'style-loader!css-loader!less-loader'
+        }, {
+            test: /\.(png|jpg|gif|svg|webp)$/,
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]?[hash]'
@@ -45,7 +49,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         noInfo: true,
-		host: '0.0.0.0'
+        host: '0.0.0.0'
     },
     devtool: '#eval-source-map'
 }

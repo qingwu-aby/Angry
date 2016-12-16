@@ -24,6 +24,7 @@
 	"less": "^2.7.1",
     "less-loader": "^2.2.3",
     "vue-loader": "^10.0.0",
+    "style-loader": "^0.13.1",
     "vue-template-compiler": "^2.1.0",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.0"

@@ -20,7 +20,7 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/
         }, {
-            test: /\.(eot|woff2|woff|ttf|otf)/,
+            test: /\.(svg|eot|woff2|woff|ttf|otf)/,
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]?[hash]'
@@ -32,9 +32,9 @@ module.exports = {
         }, {
             test: /\.less$/,
             exclude: /node_modules/,
-            loader: 'style-loader!css-loader!less-loader'
+            loader: 'style-loader!css-loader'
         }, {
-            test: /\.(png|jpg|gif|svg|webp)$/,
+            test: /\.(png|jpg|gif|webp)$/,
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]?[hash]'
@@ -48,8 +48,7 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        noInfo: true,
-        host: '0.0.0.0'
+        noInfo: true
     },
     devtool: '#eval-source-map'
 }

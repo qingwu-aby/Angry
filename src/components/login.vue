@@ -5,13 +5,17 @@
 		</div>
 		<div class="login_form">
 			<p>
-				<label for="username"><i class="fa fa-user"></i></label>
-				<input type="text" id="username">
+				<label for="username"><i class="fa fa-user fa-fw"></i></label>
+				<input type="text" id="username" placeholder="账号" style="color:#27ae60;font-size: 1.15rem;">
 			</p>
+			<div class="login_hack"></div>
 			<p>
-				<label for="password"><i class="fa fa-key"></i></label>
-				<input type="text" id="password">
+				<label for="password"><i class="fa fa-lock fa-fw"></i></label>
+				<input type="password" id="password" placeholder="密码" style="color:#27ae60;font-size: 1.15rem;">
 			</p>
+		</div>
+		<div id="button">
+			登录
 		</div>
 	</div>
 </template>
@@ -22,7 +26,7 @@ export default {}
 
 <style lang="less">
 .login_page {
-    background-color: #fff;
+    background-color: #fcfcfc;
     width: 100%;
 	position: fixed;
 	height: 100%;
@@ -35,16 +39,39 @@ export default {}
 	}
 }
 .login_form{
+	margin: 0 auto;
+	width: 75%;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	.login_hack{
+		border-bottom: 1px solid #ccc;
+	}
 	p{
-		margin: 1.5rem 0;
+		margin: 1rem 0;
+		line-height: 1.25rem;
+		height: 1.25rem;
 		label{
-			font-size: 1rem;
-			color: #222;
+			font-size: 1.2rem;
+			color: #aaa;
 		}
 		input{
+			padding-left: .5rem;
 			margin-left: 1%;
-			width: 50%;
+			outline: none;
+			width: 78%;
+			border: none;
+			background: transparent;
 		}
 	}
+}
+#button{
+	margin: 10% auto 0 auto;
+	width:75%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.25rem;
+	color: #fff;
+	background-color: #50BB91;
+	border: 1px solid #50BB91;
 }
 </style>

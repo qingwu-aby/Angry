@@ -4,13 +4,13 @@
 		<ul class="nav_login_list">
 			<router-link to="/login">
 				<li class="login_list">
-					<i class="fa fa-user"></i>
+					<i class="fa fa-user fa-fw"></i>
 					<span> 登 录</span>
 				</li>
 			</router-link>
 			<router-link to="/reg">
 				<li class="login_list">
-					<i class="fa fa-file-text"></i>
+					<i class="fa fa-file-text fa-fw"></i>
 					<span> 注 册</span>
 				</li>
 			</router-link>
@@ -20,7 +20,7 @@
 		<ul class="nav_list" ref="listNav">
 			<li class="list" v-for="item in dataList">
 				<router-link :to="item.link">
-					<i class="fa" :class="item.icon"></i>
+					<i class="fa fa-fw" :class="item.icon"></i>
 				</router-link>
 			</li>
 		</ul>

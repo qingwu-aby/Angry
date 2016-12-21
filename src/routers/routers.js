@@ -5,6 +5,7 @@ import About from '../components/about.vue'
 import NotFound from '../components/404.vue'
 import login from '../components/login.vue'
 import personInfo from '../components/about/personInfo.vue'
+import register from '../components/register.vue'
 
 export default [{
     path: '/',
@@ -49,6 +50,9 @@ export default [{
 }, {
 	path: '/login',
 	component: login,
+}, {
+	path: '/reg',
+	component: register,
 }, {
     path: '*',
     component: NotFound

@@ -1,5 +1,6 @@
 <template lang="html">
 	<div class="login_page">
+		<div class="close_icon"><i class="fa fa-remove" aria-hidden="true"></i></div>
 		<div class="login_wrapper">
 			<img src="../assets/images/ico.png">
 		</div>

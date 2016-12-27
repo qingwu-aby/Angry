@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="login_page">
-        <div><i class="fa fa-remove" aria-hidden="true"></i></div>
+        <div class="close_icon"><i class="fa fa-remove" aria-hidden="true"></i></div>
         <div class="login_wrapper">
 			<img src="../assets/images/ico.png">
 		</div>
@@ -31,5 +31,10 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="less">
+    .close_icon{
+        position: absolute;
+        top: 3%;
+        right: 5%;
+    }
 </style>

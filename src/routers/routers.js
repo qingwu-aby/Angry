@@ -1,6 +1,4 @@
 import Home from '../components/home.vue'
-import Remind from '../components/remind.vue'
-import Nav from '../components/nav.vue'
 import About from '../components/about.vue'
 import NotFound from '../components/404.vue'
 import login from '../components/login.vue'
@@ -14,12 +12,6 @@ export default [{
 }, {
     path: '/home',
     component: Home
-}, {
-    path: '/remind',
-    component: Remind
-}, {
-    path: '/nav',
-    component: Nav
 }, {
     path: '/about',
     component: About,

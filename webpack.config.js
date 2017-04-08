@@ -1,6 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
-
+try {
+    require('os').networkInterfaces();
+} catch (e) {
+    require('os').networkInterfaces = () => ({});
+}
 module.exports = {
     entry: './src/main.js',
     output: {
@@ -48,7 +52,17 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        noInfo: true
+        noInfo: true,
+        proxy: {
+            '/auth':{
+                target: 'http://localhost:3000',
+                changeOrigin: true
+            },
+            '/api':{
+                target: 'http://localhost:3000',
+                changeOrigin: true
+            }
+        }
     },
     devtool: '#eval-source-map'
 }

@@ -20,7 +20,7 @@
 		<ul class="nav_list" ref="listNav">
 			<li class="list" v-for="item in dataList">
 				<router-link :to="item.link">
-					<i class="fa fa-fw" :class="item.icon"></i>
+					<span>{{item.text}}</span>
 				</router-link>
 			</li>
 		</ul>
@@ -38,18 +38,12 @@ export default {
 		return {
 			dataList: [{
 				'link': '/home',
-				'icon': 'fa-home'
-			}, {
-				'link': '/nav',
-				'icon': 'fa-paper-plane'
-			}, {
-				'link': '/remind',
-				'icon': 'fa-bell'
+				'text': '首页'
 			}, {
 				'link': '/about',
-				'icon': 'fa-user'
+				'text': '我的'
 			}],
-			auth: false
+			auth: true
 		}
 	}
 }
@@ -76,8 +70,11 @@ html {
 	bottom: 0;
 	height: 50px;
 	width: 100%;
-	background: #fff;
 	border-top: 1px solid #eee;
+}
+.nav {
+	border: none;
+	top: 0 !important;
 }
 .login_box{
 	width: 100%;
@@ -114,27 +111,40 @@ html {
 	}
 }
 .nav_list {
+	li:first-child:after{
+		position: absolute;
+	   	top: 25%;
+	   	height: 50%;
+	   	left: 50%;
+	   	content: '';
+	   	width: 0;
+	   	border-left: 1px solid #999;
+	}
 	.router-link-active i {
 		color: #42b983;
 	}
 	list-style-type: none;
 	padding: 0;
 	font-size: 0;
+	.list {
+		border-bottom: 1px solid #999;
+		display: inline-block;
+		vertical-align: middle;
+		width: 40%;
+		text-align: center;
+		padding: 0 2.5%;
+		span {
+			line-height: 50px;
+			color: #bbb;
+			text-align: center;
+			display: inline-block;
+			font-size: 1rem;
+		}
+	}
 }
 .fade-enter-active, .fade-leave-active{
 	transition: all .2s ease;
 }
 
-.list {
-	display: inline-block;
-	vertical-align: middle;
-	width: 20%;
-	padding: 0 2.5%;
-}
 
-.list i {
-	line-height: 50px;
-	color: #bbb;
-	font-size: 1.85rem;
-}
 </style>

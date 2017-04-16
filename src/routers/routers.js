@@ -1,5 +1,6 @@
 import Home from '../components/home.vue'
 import About from '../components/about.vue'
+import Category from '../components/category.vue'
 import NotFound from '../components/404.vue'
 import login from '../components/login.vue'
 import personInfo from '../components/about/personInfo.vue'
@@ -12,6 +13,9 @@ export default [{
 }, {
     path: '/home',
     component: Home
+}, {
+	path: '/category',
+	component: Category
 }, {
     path: '/about',
     component: About,

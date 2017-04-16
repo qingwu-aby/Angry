@@ -4,7 +4,7 @@
 		<div class="login_wrapper">
 			<img src="../assets/images/ico.png">
 		</div>
-		<div class="login_form">
+		<div class="login_form" @keyup.enter="login">
 			<p>
 				<label for="username"><i class="fa fa-user fa-fw"></i></label>
 				<input type="text"  v-model="username" id="username" placeholder="账号">
@@ -49,10 +49,10 @@ export default {
 				.then((res)=>{
 					if(res.data.code===1){
 						sessionStorage.setItem('Yuan-Token', res.data.token)
-						console.log({
-							type: 'success',
-							message: '登陆成功'
-						})
+						// console.log({
+						// 	type: 'success',
+						// 	message: '登陆成功'
+						// })
 						this.$router.push('/about')
 					}else{
 						//登陆失败清空token
@@ -60,7 +60,7 @@ export default {
 						sessionStorage.setItem('Yuan-Token', null)
 					}
 				},(err)=> {
-					console.log("failed")
+					// console.log("failed")
 					sessionStorage.setItem('Yuan-Token', null)
 				})
 		}
@@ -73,6 +73,7 @@ export default {
     background-color: #f2f2f2;
     width: 100%;
 	position: fixed;
+	top:0;
 	height: 100%;
 	.auth_login{
 		position: relative;

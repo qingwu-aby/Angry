@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Axios from 'axios'
+import store from './vuex/index.js'
 import App from './App.vue'
 
 import './assets/css/font-awesome.css'
@@ -14,23 +15,26 @@ Vue.prototype.$http = Axios
 const router = new VueRouter({
     routes
 })
-// router.beforeEach((to, from, next)=>{
-// 	const token = sessionStorage.getItem('Yuan-Token')
-// 	if(to.path === '/login'){
-// 		if(token !== null ){
-// 			next('/about')
-// 		}else {
-// 			next()
-// 		}
-// 	}else {
-// 		if(token !== null) {
-// 			next()
-// 		}else{
-// 			next('/login')
-// 		}
-// 	}
-// })
+/*router.beforeEach((to, from, next)=>{
+	const token = sessionStorage.getItem('Yuan-Token')
+	if(to.path === '/login'){
+		if(token !== null && token !== 'null' && token !== 'undefined'){
+			next('/about')
+		}else {
+			next()
+		}
+	}else if(to.path === '/reg') {
+		next()
+	}else {
+		if(token !== null && token !== 'null' && token !== 'undefined') {
+			next()
+		}else{
+			next('/login')
+		}
+	}
+})*/
 const app = new Vue({
     router: router,
+    store: store,
     render: h => h(App),
 }).$mount('#app')

@@ -53,11 +53,9 @@
 			</div>
 		</div>
 		<div class="mask _mask2">
-			<router-link to="about/logout">
-				<div class="logout">
-					退出登录
-				</div>
-			</router-link>
+			<div class="logout">
+				退出登录
+			</div>
 		</div>
 		<div class="copyright">
 			<span>Version 0.0.1</span>
@@ -96,6 +94,9 @@ export default {
 				'label': '分享'
 			}]
 		}
+	},
+	methods:{
+			
 	}
 }
 </script>
@@ -104,7 +105,7 @@ export default {
 	@borderColor: #eee;
 	@fontColor: #42b983;
 	.content{
-		margin: 50px 0;
+		margin-bottom: 50px;
 		overflow: hidden;
 	}
 	.head_wrapper{

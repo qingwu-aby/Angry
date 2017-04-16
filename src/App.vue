@@ -1,5 +1,18 @@
 <template>
 <div id="app">
+	<div class="aside_list">
+		<span><i class="fa fa-navicon fa-fw"></i></span>
+		<span>K</span>
+	</div>
+	<div class="nav">
+		<ul class="nav_list" ref="listNav">
+			<li class="list" v-for="item in dataList">
+				<router-link :to="item.link">
+					<span>{{item.text}}</span>
+				</router-link>
+			</li>
+		</ul>
+	</div>
 	<div class="login_box">
 		<ul class="nav_login_list">
 			<router-link to="/login">
@@ -16,15 +29,7 @@
 			</router-link>
 		</ul>
 	</div>
-	<div class="nav" v-show="this.auth===true">
-		<ul class="nav_list" ref="listNav">
-			<li class="list" v-for="item in dataList">
-				<router-link :to="item.link">
-					<span>{{item.text}}</span>
-				</router-link>
-			</li>
-		</ul>
-	</div>
+	
 	<transition name="fade" mode="out-in">
 		<router-view></router-view>
 	</transition>
@@ -38,10 +43,10 @@ export default {
 		return {
 			dataList: [{
 				'link': '/home',
-				'text': '首页'
+				'text': '推荐'
 			}, {
-				'link': '/about',
-				'text': '我的'
+				'link': '/category',
+				'text': '专题'
 			}],
 			auth: true
 		}
@@ -63,8 +68,22 @@ html {
 	text-align: center;
 	margin: 0;
 }
-
-.nav ,.login_box{
+.aside_list{
+	width:100%;
+	height:50px;
+	line-height:50px;
+	color: #666;
+	span{
+		float: left;
+		font-size:1.75rem;
+		display:inline-block;
+	}
+	i{
+		font-size:1.75rem;
+		padding: 0 1rem;
+	}
+}
+.login_box{
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -74,7 +93,7 @@ html {
 }
 .nav {
 	border: none;
-	top: 0 !important;
+	height: 50px;
 }
 .login_box{
 	width: 100%;
@@ -111,10 +130,11 @@ html {
 	}
 }
 .nav_list {
+	border-bottom: 2px solid #e7e7e7;
 	li:first-child:after{
 		position: absolute;
-	   	top: 25%;
-	   	height: 50%;
+	   	height: 30px;
+	   	top:8%;
 	   	left: 50%;
 	   	content: '';
 	   	width: 0;
@@ -127,15 +147,14 @@ html {
 	padding: 0;
 	font-size: 0;
 	.list {
-		border-bottom: 1px solid #999;
 		display: inline-block;
 		vertical-align: middle;
-		width: 40%;
+		width: 45%;
 		text-align: center;
 		padding: 0 2.5%;
 		span {
 			line-height: 50px;
-			color: #bbb;
+			color: #333;
 			text-align: center;
 			display: inline-block;
 			font-size: 1rem;

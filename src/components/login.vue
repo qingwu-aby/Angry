@@ -56,7 +56,7 @@ export default {
 						this.$router.push('/about')
 					}else{
 						//登陆失败清空token
-						console.log(res.data.msg)
+						// console.log(res.data.msg)
 						sessionStorage.setItem('Yuan-Token', null)
 					}
 				},(err)=> {

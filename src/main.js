@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Axios from 'axios'
-import store from './vuex/index.js'
 import App from './App.vue'
+import store from './vuex'
 
 import './assets/css/font-awesome.css'
 import './assets/css/reset.css'
